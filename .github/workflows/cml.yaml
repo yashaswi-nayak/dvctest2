@@ -23,7 +23,7 @@ jobs:
           if [[ "${GITHUB_REF}" == "refs/heads/main" ]] ; then
             PREVIOUS_REF='HEAD~1'
           else
-            PREVIOUS_REF='main'
+            PREVIOUS_REF='master'
           fi
           echo "### $PREVIOUS_REV → workspace" >> report.md
           dvc metrics diff $PREVIOUS_REV --show-md >> report.md
