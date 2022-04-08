@@ -14,13 +14,13 @@ jobs:
           echo "# CML Report" > report.md
 
           echo "## Plots" >> report.md
-          dvc plots diff main \
+          dvc plots diff master \
             --show-vega --targets prc.json > vega.json
           vl2svg vega.json prc.svg
           cml publish prc.svg --title "Precision & Recall" --md >> report.md
 
           echo "## Metrics" >> report.md
-          if [[ "${GITHUB_REF}" == "refs/heads/main" ]] ; then
+          if [[ "${GITHUB_REF}" == "refs/heads/master" ]] ; then
             PREVIOUS_REF='HEAD~1'
           else
             PREVIOUS_REF='master'
