@@ -1,0 +1,20 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python src/prepare.py data/data.xml
+    deps:
+    - path: data/data.xml
+      md5: 966fe8febeb96ab3fffdbb7b125e6536
+      size: 15160289
+    - path: src/prepare.py
+      md5: 51549a1c87b182ebdd785704f56ffaf1
+      size: 1581
+    params:
+      params.yaml:
+        prepare.seed: 20170428
+        prepare.split: 0.2
+    outs:
+    - path: data/prepared
+      md5: 0c5fc76f4f9209b476d79a07c4da2898.dir
+      size: 9543569
+      nfiles: 2
